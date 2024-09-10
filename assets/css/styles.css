@@ -1,0 +1,71 @@
+/* Basic reset for margins */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+#app {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+input[type="number"] {
+    padding: 5px;
+    margin: 10px 0;
+    width: 80px;
+    font-size: 16px;
+}
+
+#slider {
+    margin: 30px 0;
+}
+
+p {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Styling for available (green) and booked (red) slots */
+.noUi-connect {
+    background: green;  /* Default available time is green */
+}
+
+.noUi-connect.noUi-connect-booked {
+    background: red !important;  /* Booked times in red */
+}
+/* Styling for the booked time bar */
+.booked-bar {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0; /* Background color for the entire bar */
+    margin-top: 15px;  /* Space between the slider and the bar */
+    border-radius: 5px; /* Round the edges */
+    overflow: hidden;
+}
+
+.booked-slot {
+    position: absolute;
+    height: 100%;
+    background-color: red;
+    z-index: 1;
+}
+
+.available-slot {
+    position: absolute;
+    height: 100%;
+    background-color: green;
+    z-index: 1;
+}
