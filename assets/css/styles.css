@@ -32,14 +32,14 @@ input[type="number"] {
 }
 
 p {
-    color: red;
+    color: #FF8274;
     font-weight: bold;
     text-align: center;
 }
 
 /* Styling for available (green) and booked (red) slots */
 .noUi-connect {
-    background: green;  /* Default available time is green */
+    background: #034B45;  /* Default available time is green */
 }
 
 .noUi-connect.noUi-connect-booked {
@@ -59,13 +59,13 @@ p {
 .booked-slot {
     position: absolute;
     height: 100%;
-    background-color: red;
+    background-color: #FF8274;
     z-index: 1;
 }
 
 .available-slot {
     position: absolute;
     height: 100%;
-    background-color: green;
+    background-color: #034B45;
     z-index: 1;
 }

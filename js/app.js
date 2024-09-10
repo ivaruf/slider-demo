@@ -25,7 +25,7 @@ new Vue({
                     max: 24
                 },
                 step: 0.25, // Set intervals of 15 minutes
-                tooltips: true,
+                tooltips: [{ to: this.formatTooltip }, { to: this.formatTooltip }],  // Correct format for tooltips
             });
 
             this.slider.on('update', (values, handle) => {
@@ -44,7 +44,6 @@ new Vue({
             );
         },
         updateBookedTimes() {
-            // Get the booked time bar element
             const bookedBar = document.getElementById('booked-time-bar');
             bookedBar.innerHTML = '';  // Clear any previous slots
 
@@ -80,6 +79,29 @@ new Vue({
                 availableSlot.style.width = `${((fullDay - lastEnd) / fullDay) * 100}%`;
                 bookedBar.appendChild(availableSlot);
             }
+        },
+        // Utility function to convert decimal to time format (HH:MM)
+        formatTime(value) {
+            // Fix floating-point issues by rounding to two decimal places
+            value = Math.round(value * 100) / 100;
+
+            const hours = Math.floor(value);
+            const minutes = (value - hours) * 60;
+            const formattedMinutes = minutes === 0 ? '00' : minutes < 10 ? '0' + minutes : Math.round(minutes);
+
+            return hours.toString().padStart(2, '0') + ':' + formattedMinutes;
+        },
+        // Format tooltip as time
+        formatTooltip(value) {
+            return this.formatTime(+value);
+        }
+    },
+    computed: {
+        formattedStartTime() {
+            return this.formatTime(this.startTime);
+        },
+        formattedEndTime() {
+            return this.formatTime(this.endTime);
         }
     }
 });
