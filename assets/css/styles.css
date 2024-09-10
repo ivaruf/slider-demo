@@ -69,3 +69,14 @@ p {
     background-color: #034B45;
     z-index: 1;
 }
+
+
+/* Default available time (green) */
+.noUi-connect-available {
+    background: #034B45 !important;
+}
+
+/* Overlapping time (red) */
+.noUi-connect-overlap {
+    background: red !important;
+}

@@ -39,9 +39,24 @@ new Vue({
             this.checkOverlap();
         },
         checkOverlap() {
+            // Check if the selected time range overlaps with any booked slots
             this.overlaps = this.bookedSlots.some(slot =>
                 (this.startTime < slot.end && this.endTime > slot.start)
             );
+
+            // Access the connect elements of the slider
+            const connectElements = document.querySelectorAll('.noUi-connect');
+
+            // Update slider connection color based on overlap status
+            if (this.overlaps) {
+                connectElements.forEach(connect => {
+                    connect.style.background = 'red'; // Change the color to red
+                });
+            } else {
+                connectElements.forEach(connect => {
+                    connect.style.background = 'green'; // Change the color to green
+                });
+            }
         },
         updateBookedTimes() {
             const bookedBar = document.getElementById('booked-time-bar');
