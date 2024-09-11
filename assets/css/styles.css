@@ -110,3 +110,12 @@ p {
     top: 32px;
     height: 100%;
 }
+
+button {
+    margin: 10px !important;
+}
+
+.time-buttons {
+    margin-bottom: 50px;
+}
+

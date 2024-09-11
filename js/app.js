@@ -65,6 +65,13 @@ new Vue({
                 });
             }
         },
+        // Method to set start and end time based on button click
+        setTime(start, end) {
+            this.startTime = start;
+            this.endTime = end;
+            this.slider.set([start, end]);  // Update the slider
+            this.checkOverlap();
+        },
         updateBookedTimes() {
             const bookedBar = document.getElementById('booked-time-bar');
             bookedBar.innerHTML = '';  // Clear any previous slots

@@ -7,6 +7,7 @@
     <!-- Include noUiSlider styles -->
     <link href="https://cdn.jsdelivr.net/npm/nouislider@15.6.1/dist/nouislider.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css"> <!-- Custom styles -->
+    <link href="https://punkt-cdn.oslo.kommune.no/latest/css/pkt.min.css" rel="stylesheet" />
 </head>
 <body>
 <div id="app">
@@ -19,11 +20,27 @@
         -->
     </div>
 
+    <div class="time-buttons">
+        <button class="pkt-btn" @click="setTime(6, 8)">06:00 - 08:00</button>
+        <button class="pkt-btn" @click="setTime(8, 10)">08:00 - 10:00</button>
+        <button class="pkt-btn" @click="setTime(10, 12)">10:00 - 12:00</button>
+        <button class="pkt-btn" @click="setTime(12, 14)">12:00 - 14:00</button>
+        <button class="pkt-btn" @click="setTime(14, 16)">14:00 - 16:00</button>
+        <button class="pkt-btn" @click="setTime(16, 18)">16:00 - 18:00</button>
+        <button class="pkt-btn" @click="setTime(18, 20)">18:00 - 20:00</button>
+        <button class="pkt-btn" @click="setTime(20, 22)">20:00 - 22:00</button>
+        <button class="pkt-btn" @click="setTime(22, 24)">22:00 - 24:00</button>
+    </div>
+
     <!-- Main Slider -->
     <div id="slider"></div>
 
     <!-- Booked Time Bar -->
     <div id="booked-time-bar" class="booked-bar"></div>
+
+    <div v-if="overlaps">
+       Tidspunktet er opptatt
+    </div>
 
 </div>
 
