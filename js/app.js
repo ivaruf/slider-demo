@@ -54,7 +54,7 @@ new Vue({
                 });
             } else {
                 connectElements.forEach(connect => {
-                    connect.style.background = '#2A2859'; // Change the color to green
+                    connect.style.background = '#C7FDE9'; // Change the color to green
                 });
             }
         },

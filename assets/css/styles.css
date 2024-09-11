@@ -38,8 +38,8 @@ p {
 }
 
 /* Styling for available (green) and booked (red) slots */
-.noUi-connect {
-    background: #2A2859;  /* Default available time is green */
+.noUi-connect.noUi-connect-available {
+    background: green !important;  /* Available times in green */
 }
 
 .noUi-connect.noUi-connect-booked {
@@ -49,11 +49,14 @@ p {
 .booked-bar {
     position: relative;
     width: 100%;
-    height: 10px;
-    background-color: #e0e0e0; /* Background color for the entire bar */
-    margin-top: 15px;  /* Space between the slider and the bar */
-    border-radius: 5px; /* Round the edges */
+    height: 16px;
+    background-color: #e0e0e0;
+    /* margin-top: 15px; */
+    border-radius: 5px;
     overflow: hidden;
+    bottom: 0;
+    top: -47px;
+    z-index: 0;
 }
 
 .booked-slot {
@@ -94,4 +97,10 @@ p {
     border-radius: 9px;
 }
 */
+.available {
+    background: green;
+}
 
+.conflict {
+    background: darkgray;
+}
