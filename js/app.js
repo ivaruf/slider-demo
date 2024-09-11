@@ -50,11 +50,11 @@ new Vue({
             // Update slider connection color based on overlap status
             if (this.overlaps) {
                 connectElements.forEach(connect => {
-                    connect.style.background = 'red'; // Change the color to red
+                    connect.style.background = '#999999'; // Change the color to red
                 });
             } else {
                 connectElements.forEach(connect => {
-                    connect.style.background = 'green'; // Change the color to green
+                    connect.style.background = '#2A2859'; // Change the color to green
                 });
             }
         },

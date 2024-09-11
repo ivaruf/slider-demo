@@ -39,11 +39,11 @@ p {
 
 /* Styling for available (green) and booked (red) slots */
 .noUi-connect {
-    background: #034B45;  /* Default available time is green */
+    background: #2A2859;  /* Default available time is green */
 }
 
 .noUi-connect.noUi-connect-booked {
-    background: red !important;  /* Booked times in red */
+    background: #999999 !important;  /* Booked times in red */
 }
 /* Styling for the booked time bar */
 .booked-bar {
@@ -59,24 +59,39 @@ p {
 .booked-slot {
     position: absolute;
     height: 100%;
-    background-color: #FF8274;
+    background-color: #999999;
     z-index: 1;
 }
 
 .available-slot {
     position: absolute;
     height: 100%;
-    background-color: #034B45;
+    background-color: #2A2859;
     z-index: 1;
 }
 
 
 /* Default available time (green) */
 .noUi-connect-available {
-    background: #034B45 !important;
+    background: #2A2859 !important;
 }
 
 /* Overlapping time (red) */
 .noUi-connect-overlap {
-    background: red !important;
+    background: #999999 !important;
 }
+
+/*#slider {
+    height: 10px;
+}
+
+
+#slider .noUi-handle {
+    height: 18px;
+    width: 18px;
+    top: -5px;
+    right: -9px;
+    border-radius: 9px;
+}
+*/
+
