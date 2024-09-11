@@ -104,3 +104,9 @@ p {
 .conflict {
     background: darkgray;
 }
+
+.end-tooltip {
+    position: absolute;
+    top: 32px;
+    height: 100%;
+}

@@ -27,6 +27,13 @@ new Vue({
                 step: 0.25, // Set intervals of 15 minutes
                 tooltips: [{ to: this.formatTooltip }, { to: this.formatTooltip }],  // Correct format for tooltips
             });
+            this.slider.on('update', () => {
+                const tooltips = document.querySelectorAll('.noUi-tooltip');
+                if (tooltips.length === 2) {
+                    // Apply class to the second tooltip (end handle)
+                    tooltips[1].classList.add('end-tooltip');
+                }
+            });
 
             this.slider.on('update', (values, handle) => {
                 if (handle === 0) this.startTime = +values[0];
